@@ -9,6 +9,7 @@ import { CardLabelComponent } from 'src/app/components/card/card-label/card-labe
 import { CardPricingComponent } from 'src/app/components/card/card-pricing/card-pricing.component';
 import { MenuBarItemComponent } from 'src/app/components/menu-bar/menu-bar-item/menu-bar-item.component';
 import { AppComponent } from 'src/app/app.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppComponent } from 'src/app/app.component';
     MenuBarComponent,
     CardLabelComponent,
     CardPricingComponent,
-    MenuBarItemComponent
+    MenuBarItemComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
