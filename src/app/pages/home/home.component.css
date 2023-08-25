@@ -8,3 +8,15 @@
 	align-items: baseline;
 	flex-wrap: wrap;
 }
+
+.home__container__style.css{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+/* .body__style.css{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(9,9,121,1) 100%);
+} */
