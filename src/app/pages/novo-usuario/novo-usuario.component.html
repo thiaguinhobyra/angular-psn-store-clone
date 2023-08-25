@@ -1,0 +1,62 @@
+<h4 class="text-center">Cadastre-se</h4>
+
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+    <div class="form-group">
+        <input 
+        placeholder="nome" 
+        class="form-control" 
+        formControlName="nome"
+        >
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('nome')?.errors && novoUsuarioForm.get('nome')?.touched"
+            mensagem="Nome obrigatório!"
+        ></app-mensagem>
+    </div>
+    <div class="form-group">
+        <input placeholder="contato" class="form-control" formControlName="contato">
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('contato')?.errors?.['minlength'] && novoUsuarioForm.get('contato')?.touched"
+            mensagem="O contato deve ser válido."
+        ></app-mensagem>
+    </div>
+    <div class="form-group">
+        <input placeholder="cpf" class="form-control" formControlName="cpf">
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('cpf')?.errors?.['minlength'] && novoUsuarioForm.get('cpf')?.touched"
+            mensagem="O CPF deve conter no mínimo 11 caracteres."
+        ></app-mensagem>
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('cpf')?.errors?.['required'] && novoUsuarioForm.get('cpf')?.touched"
+            mensagem="CPF obrigatório!"
+        ></app-mensagem>
+    </div>
+    <div class="form-group">
+        <input placeholder="email" class="form-control" formControlName="email">
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] && novoUsuarioForm.get('email')?.touched"
+            mensagem="E-mail obrigatório!"
+        ></app-mensagem>
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('email')?.errors?.['email'] && novoUsuarioForm.get('email')?.touched"
+            mensagem="O e-mail deve ser válido."
+        ></app-mensagem>
+        <!-- <app-mensagem 
+            *ngIf="novoUsuarioForm.get('email')?.errors?.['usuarioExistente']"
+            mensagem="Esse e-mail já está em uso."
+        ></app-mensagem> -->
+    </div>
+    <div class="form-group">
+        <input placeholder="senha" type="password" class="form-control" formControlName="senha">
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('senha')?.errors?.['required'] && novoUsuarioForm.get('senha')?.touched"
+            mensagem="Senha obrigatória!"
+        ></app-mensagem>
+        <app-mensagem 
+            *ngIf="novoUsuarioForm.get('senha')?.errors?.['minlength'] && novoUsuarioForm.get('senha')?.touched"
+            mensagem="A Senha deve conter no mínimo 8 caracteres."
+        ></app-mensagem>
+    </div>
+    <button class="btn btn-primary btn-block">Cadastrar</button>
+</form>
+
+<p>Já é um usuário? <a [routerLink]="['/login']">Faça Login</a></p>
