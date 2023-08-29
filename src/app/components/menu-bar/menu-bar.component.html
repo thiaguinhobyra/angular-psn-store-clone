@@ -9,5 +9,20 @@
         >
     </div>
     <app-menu-bar-item></app-menu-bar-item>
-    <button class="menu-bar__iniciar" (click)="redirecionarParaLogin()">Iniciar Sessão</button>
+    <header class="menu-bar__iniciar">
+        <nav class="menu-bar__iniciar navbar navbar-light bg-white">
+            <div *ngIf="user$ | async as user">
+                <div *ngIf="user.name; else login">
+                    <i class="fa fa-user-circle mr-1"></i>
+                    <a class="mr-1">{{user.name}}</a>
+                    <a (click)="logout()">  Sair</a>
+                </div>
+            </div>
+        </nav>
+        <ng-template #login>
+            <span class="navbar-text">
+                <a [routerLink]="['']">Entrar</a>
+            </span>
+        </ng-template>
+    </header>
 </div>
