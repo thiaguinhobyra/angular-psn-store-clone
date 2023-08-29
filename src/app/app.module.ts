@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 import { MenuBarModule } from './components/menu-bar/menu-bar.module';
-import { NovoUsuarioModule } from './pages/novo-usuario/novo-usuario.module';
+import { RodapeModule } from './components/rodape/rodape.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { NovoUsuarioModule } from './pages/novo-usuario/novo-usuario.module';
     AppRoutingModule,
     HttpClientModule,
     MenuBarModule,
-    NovoUsuarioModule
+    RodapeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
