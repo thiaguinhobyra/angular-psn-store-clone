@@ -7,14 +7,6 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'home',
   },
-  // { 
-  //   path: 'login', 
-  //   component: LoginComponent 
-  // },
-  // {
-  //   path: 'novousuario',
-  //   loadChildren:() => import('./pages/novo-usuario/novo-usuario.module').then((m)=>m.NovoUsuarioModule),
-  // },
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
@@ -22,10 +14,6 @@ const routes: Routes = [
   {
     path: 'home-cards',
     loadChildren: () => import('./components/home-cards/home-cards.module').then((m) => m.HomeCardsModule),
-  },
-  {
-    path: 'jogos',
-    loadChildren: () => import('./jogos/jogos.module').then((m) => m.JogosModule),
   }
 ];
 

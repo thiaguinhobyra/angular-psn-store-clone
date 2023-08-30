@@ -16,13 +16,11 @@ import { MensagemModule } from 'src/app/components/mensagem/mensagem.module';
     CardComponent,
     CardLabelComponent,
     CardPricingComponent,
-    // LoginComponent
   ],
   imports: [
     CommonModule,
     HomeCardsRoutingModule,
     FormsModule,
-    MensagemModule,
   ],
   exports: [HomeCardsComponent]
 })
