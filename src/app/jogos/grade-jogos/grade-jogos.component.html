@@ -1,0 +1,8 @@
+<div class="home_cards__container">
+    <div *ngFor="let jogo of jogos">
+        <a [routerLink]="['/jogos', jogo.id]"></a>
+        <app-jogo
+            [id]="jogo.id"
+        ></app-jogo>
+    </div>
+</div>
