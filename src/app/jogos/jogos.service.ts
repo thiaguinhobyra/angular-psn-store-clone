@@ -14,32 +14,36 @@ export class JogosService {
 
   private jogos: Jogo[] = [
     {
-      id: "1",
+      id: 1,
       gameCover: "assets/bt-1.jpg",
       gameLabel: "DIGITAL",
       gameType: "DIGITAL | PS5",
       gamePrice: "R$ 129,99",
+      gameDescription: "Battlefild 1",
     }, 
     {
-      id: "2",
+      id: 2,
       gameCover: "assets/bt-4.jpg",
       gameLabel: "EXCLUSIVE",
       gameType: "DISCO | PS5",
       gamePrice: "R$ 229,99",
+      gameDescription: "Battlefild 4",
     }, 
     {
-      id: "3",
+      id: 3,
       gameCover: "assets/bt-hardline.jpg",
       gameLabel: "NEW",
       gameType: "DIGITAL | PS4",
       gamePrice: "R$ 289,99",
+      gameDescription: "Battlefild hardline",
     }, 
     {
-      id: "4",
+      id: 4,
       gameCover: "assets/bt-5.jpg",
       gameLabel: "NEW",
       gameType: "DIGITAL | PS4",
       gamePrice: "R$ 389,99",
+      gameDescription: "Battlefild V",
     }, 
   ];
 
@@ -49,8 +53,6 @@ export class JogosService {
     ) { }
 
     listaDoUsuario(nomeDoUsuario: string):Observable<Jogo> {
-      console.log('listaDoUsuario', nomeDoUsuario);
-      
       const token = this.tokenService.retornaToken();
       const headers = new HttpHeaders().append('x-access-token', token);
       return this.http.get<Jogo>(`${API}/${nomeDoUsuario}/photos`, {
@@ -58,12 +60,8 @@ export class JogosService {
       });
     }
 
-    buscaPorID(id: number): Observable<Jogo> {
-      return this.http.get<Jogo>(`${API}/photos/${id}`);
-    }
-
-    getJogoById(id: string): Jogo | undefined {
-      return this.jogos.find(jogo => jogo.id === id);
+    getJogoById(id: number): Jogo | null {      
+      return this.jogos.find(jogo => jogo.id == id) ?? null;
     }
   
     getAllJogos(): Jogo[] {

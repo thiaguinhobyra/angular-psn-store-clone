@@ -11,11 +11,12 @@ import { JogosService } from '../jogos.service';
 export class JogoComponent implements OnInit {
 
   @Input()
-  id="";
+  id: number = 0;
   gameCover: string = "";
   gameLabel: string= "";
   gameType: string= "";
   gamePrice: string= "";
+  gameDescription: string= "";
 
   constructor(
     private jogoService: JogosService
@@ -23,13 +24,14 @@ export class JogoComponent implements OnInit {
 
   ngOnInit(): void {
     
-    const jogo: Jogo | undefined = this.jogoService.getJogoById(this.id);
+    const jogo: Jogo | null = this.jogoService.getJogoById(this.id);
     
     if (jogo) {
       this.gameCover = jogo.gameCover;
       this.gameLabel = jogo.gameLabel;
       this.gameType = jogo.gameType;
       this.gamePrice = jogo.gamePrice;
+      this.gameDescription = jogo.gameDescription;
     } else {
       // Trate o caso em que o ID não foi encontrado
       console.error(`Jogo com ID ${this.id} não encontrado.`);

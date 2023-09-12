@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Jogo } from '../jogos.model';
+import { JogosService } from '../jogos.service';
 
 @Component({
   selector: 'app-detalhe-jogo',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalheJogoComponent implements OnInit {
 
-  constructor() { }
+  jogoId!: number;
+
+  jogo$!: any;
+
+  constructor(
+    private jogoService: JogosService,
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    this.jogoId = this.activatedRoute.snapshot.params['jogoId'];
+    this.jogo$ = this.jogoService.getJogoById(this.jogoId);
   }
 
 }

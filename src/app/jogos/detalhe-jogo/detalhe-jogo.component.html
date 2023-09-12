@@ -1,1 +1,14 @@
-<p>detalhe-jogo works!</p>
+<div class="bg-white border" *ngIf="jogo$ as jogo">
+    <div class="row">
+        <div class="col-lg-8">
+            <app-jogo
+                [id]="jogo.id"
+            ></app-jogo>
+        </div>
+        <div class="col-lg-4">
+            <small>
+                <p class="text-left break-word">{{jogo?.gameDescription}}</p>
+            </small>
+        </div>
+    </div>
+</div>
