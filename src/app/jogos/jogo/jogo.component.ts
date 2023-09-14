@@ -17,6 +17,12 @@ export class JogoComponent implements OnInit {
   gameType: string= "";
   gamePrice: string= "";
   gameDescription: string= "";
+  gameVideo: string= "";
+  gameClassificacao: number= 0;
+  gameCapa: string= "";
+  gameVersao: string= "";
+  gameJogadores: string= "";
+  gameFavorito: boolean = false;
 
   constructor(
     private jogoService: JogosService
@@ -32,6 +38,12 @@ export class JogoComponent implements OnInit {
       this.gameType = jogo.gameType;
       this.gamePrice = jogo.gamePrice;
       this.gameDescription = jogo.gameDescription;
+      this.gameVideo = jogo.gameVideo;
+      this.gameClassificacao = jogo.gameClassificacao;
+      this.gameCapa = jogo.gameCapa;
+      this.gameVersao = jogo.gameVersao;
+      this.gameJogadores = jogo.gameJogadores;
+      this.gameFavorito = jogo.gameFavorito;
     } else {
       // Trate o caso em que o ID não foi encontrado
       console.error(`Jogo com ID ${this.id} não encontrado.`);

@@ -19,7 +19,13 @@ export class JogosService {
       gameLabel: "DIGITAL",
       gameType: "DIGITAL | PS5",
       gamePrice: "R$ 129,99",
-      gameDescription: "Battlefild 1",
+      gameDescription: "Battlefield 1",
+      gameVideo: "2k",
+      gameClassificacao: 15,
+      gameCapa: "assets/Battlefield_1_capa.jpg",
+      gameVersao: "PS2",
+      gameJogadores: "2",
+      gameFavorito: false,
     }, 
     {
       id: 2,
@@ -27,7 +33,13 @@ export class JogosService {
       gameLabel: "EXCLUSIVE",
       gameType: "DISCO | PS5",
       gamePrice: "R$ 229,99",
-      gameDescription: "Battlefild 4",
+      gameDescription: "Battlefield 4",
+      gameVideo: "4k",
+      gameClassificacao: 13,
+      gameCapa: "assets/Battlefield_4_capa.jpg",
+      gameVersao: "PS3",
+      gameJogadores: "3",
+      gameFavorito: false,
     }, 
     {
       id: 3,
@@ -35,7 +47,13 @@ export class JogosService {
       gameLabel: "NEW",
       gameType: "DIGITAL | PS4",
       gamePrice: "R$ 289,99",
-      gameDescription: "Battlefild hardline",
+      gameDescription: "Battlefield hardline",
+      gameVideo: "8k",
+      gameClassificacao: 16,
+      gameCapa: "assets/Battlefield_hardline_capa.jpg",
+      gameVersao: "PS4",
+      gameJogadores: "4",
+      gameFavorito: false,
     }, 
     {
       id: 4,
@@ -43,7 +61,13 @@ export class JogosService {
       gameLabel: "NEW",
       gameType: "DIGITAL | PS4",
       gamePrice: "R$ 389,99",
-      gameDescription: "Battlefild V",
+      gameDescription: "Battlefield V",
+      gameVideo: "8k",
+      gameClassificacao: 12,
+      gameCapa: "assets/Battlefield_V_capa.jpg",
+      gameVersao: "PS5",
+      gameJogadores: "5",
+      gameFavorito: false,
     }, 
   ];
 
@@ -53,11 +77,7 @@ export class JogosService {
     ) { }
 
     listaDoUsuario(nomeDoUsuario: string):Observable<Jogo> {
-      const token = this.tokenService.retornaToken();
-      const headers = new HttpHeaders().append('x-access-token', token);
-      return this.http.get<Jogo>(`${API}/${nomeDoUsuario}/photos`, {
-        headers,
-      });
+      return this.http.get<Jogo>(`${API}/${nomeDoUsuario}/photos`);
     }
 
     getJogoById(id: number): Jogo | null {      

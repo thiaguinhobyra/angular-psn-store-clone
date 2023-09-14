@@ -1,4 +1,4 @@
-.home_cards__container{
+.grade_jogos__container{
 	width: 90%;
 	margin: auto;
 	padding-top: 50px;
@@ -9,7 +9,7 @@
 	flex-wrap: wrap;
 }
 
-.home_cards__container__style.css{
+.grade_jogos__container__style.css{
 	padding: 0;
 	margin: 0;
 	border: 0;
